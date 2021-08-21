@@ -10,13 +10,16 @@ const connect = function () {
     console.log(data);
   });
 
+  conn.on('connect', () => {
+    console.log('successfully connected to the game server');
+    conn.write('Name: HR');
+  });
+
   conn.setEncoding("utf8");
 
   return conn;
 };
 
-console.log("Connecting ...");
-connect();
 
 
 module.exports = { connect };
