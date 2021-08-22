@@ -12,7 +12,13 @@ const connect = function () {
 
   conn.on('connect', () => {
     console.log('successfully connected to the game server');
+    
     conn.write('Name: HR');
+
+    setInterval(() => {
+    conn.write("Move: up")
+    }, 50)
+
   });
 
   conn.setEncoding("utf8");
